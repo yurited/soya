@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Soya's Work</title>
+        <meta name="description" content="A simple grid layout with an initial fullscreen intro" />
+        <meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+        <meta name="author" content="Soya" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,200' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Muli:300' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="container" class="container">
+            <header class="intro">
+                <div class="intro__content">
+                   <div class="hi">
+                       <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada elit eu augue cursus sollicitudin. Nulla suscipit lorem scelerisque, feugiat libero sed, vehicula nisl. Morbi eleifend ultricies viverra. Donec tempus faucibus imperdiet. Proin dapibus felis in magna ultricies consequat. Aenean et quam mi. Duis finibus lacinia quam ac pellentesque.</h5>
+                   </div>
+                    <div class="intro__header">
+                        <h1 class="intro__title" >SOYA QIAN</h1>
+                        <div class="intro__subtitle">
+                            <p style="float:left;">Bay Area based UX/UI/Product Designer</p>
+                            <p style="float:right;">
+                                <button class="trigger">Work</button>
+                                <a href="http://www.google.com" class="intro__about">About</a>
+                            </p>
+
+                        </div>
+                    </div><!-- /intro__header -->
+                </div><!-- /intro__content -->
+            </header><!-- /intro -->
+            <section class="items-wrap">
+                <a href="sub/index.html" class="item">
+                    <img class="item__image" src="img/item01.jpg" alt="item01"/>
+                    <h2 class="item__title">Magnificence</h2>
+                </a>
+                <a href="http://www.google.com" class="item">
+                    <img class="item__image" src="img/item02.jpg" alt="item02"/>
+                    <h2 class="item__title">Electrifying</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item03.jpg" alt="item03"/>
+                    <h2 class="item__title">Dynamic</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item04.jpg" alt="item04"/>
+                    <h2 class="item__title">Crucial</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item05.jpg" alt="item05"/>
+                    <h2 class="item__title">Awe-inspiring</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item06.jpg" alt="item06"/>
+                    <h2 class="item__title">Serene</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item07.jpg" alt="item07"/>
+                    <h2 class="item__title">Vulnerable</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item08.jpg" alt="item08"/>
+                    <h2 class="item__title">Bountiful</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item09.jpg" alt="item09"/>
+                    <h2 class="item__title">Endangered</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item10.jpg" alt="item10"/>
+                    <h2 class="item__title">Beautiful</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item11.jpg" alt="item11"/>
+                    <h2 class="item__title">Inspiring</h2>
+                </a>
+                <a href="#" class="item">
+                    <img class="item__image" src="img/item12.jpg" alt="item12"/>
+                    <h2 class="item__title">Refreshing</h2>
+                </a>
+            </section>
+            <section class="related">
+                <p>If you enjoyed this demo you might also like:</p>
+                <a href="http://tympanus.net/Development/DraggableDualViewSlideshow/">Draggable Dual-View Slideshow</a><br />
+                <a href="http://tympanus.net/Tutorials/PagePreloadingEffect/">Page Preloading Effect</a>
+            </section>
+        </div><!-- /container -->
+        <script src="js/classie.js"></script>
+        <script>
+            (function() {
+                var container = document.getElementById( 'container' ),
+                    trigger = container.querySelector( 'button.trigger' );
+
+                function toggleContent() {
+                    if( classie.has( container, 'container--open' ) ) {
+                        classie.remove( container, 'container--open' );
+                        classie.remove( trigger, 'trigger--active' );
+                        window.addEventListener( 'scroll', noscroll );
+                    }
+                    else {
+                        classie.add( container, 'container--open' );
+                        classie.add( trigger, 'trigger--active' );
+                        window.removeEventListener( 'scroll', noscroll );
+                    }
+                }
+
+                function noscroll() {
+                    window.scrollTo( 0, 0 );
+                }
+
+                // reset scrolling position
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+                // disable scrolling
+                window.addEventListener( 'scroll', noscroll );
+
+                trigger.addEventListener( 'click', toggleContent );
+
+                // For Demo purposes only (prevent jump on click)
+                [].slice.call( document.querySelectorAll('.items-wrap a') ).forEach( function(el) { el.onclick = function() { return true; } } );
+            })();
+        </script>
+    </body>
+</html>
