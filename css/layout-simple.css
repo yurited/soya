@@ -72,7 +72,7 @@
 }
 
 .intro__subtitle {
-
+    position: relative;
 }
 
 .intro__description {
@@ -84,29 +84,31 @@
     letter-spacing: 0.08em;
 }
 
-.intro__about {
+.intro__caption {
+    float: left;
     opacity: 0;
-    pointer-events: none;
-    cursor: default;
-    outline: none;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
 }
-
-.container--open .intro__about{
-    pointer-events: auto;
+.container--open .intro__caption{
     opacity: 1;
 }
 
+.onetime--trigger {
+    cursor: pointer;
+    position:absolute;
+}
 
+.container--open .onetime--trigger {
+    pointer-events: none;
+    opacity: 0;
+}
 
 /* Trigger button with SVG */
 .trigger {
-    position: relative;
     -webkit-flex: none;
     flex: none;
     overflow: hidden;
-    margin: 0 10px 0 0;
     padding: 0;
     outline: none;
     border: none;
@@ -228,8 +230,23 @@
 
 .intro__control {
     float: right;
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    outline: none;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
+.container--open .intro__control{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.item,
+.intro__content {
+    font-size: 0.85em;
+}
 
 /* Media Queries */
 
@@ -247,10 +264,6 @@
         flex: 1 0 50%;
         height: 45vw;
     }
-    .item,
-    .intro__content {
-        font-size: 0.85em;
-    }
 }
 
 @media screen and (max-width: 589px) {
@@ -266,7 +279,6 @@
         font-size: 2em;
     }
     .intro__content {
-        font-size: 1em;
         padding: 2em;
     }
     .container--open .intro__content{
