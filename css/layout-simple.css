@@ -53,18 +53,13 @@
     transition: padding-bottom
     position: absolute;
     bottom: 0;
-    padding-top: 8em;
-    padding-left: 8em;
-    padding-right: 8em;
     padding-bottom: 2em;
     width: 100%;
-    font-size: 1.15em;
     color: #aaaaaa;
 }
 
 .intro__content {
-  transition: padding 0.4s linear,
-      color 0.4s linear;
+    transition: padding 0.4s linear, color 0.4s linear;
 }
 
 .intro__title {
@@ -81,22 +76,26 @@
 }
 
 .intro__description {
-    margin: 0 auto 0 0;
-    line-height: 1;
+    margin: 0 0 50px 0;
+    width: 60%;
     color: #999;
+    font-weight: 300;
+    font-size: 1.1em;
+    letter-spacing: 0.08em;
 }
 
 .intro__about {
-    color: transparent;
+    opacity: 0;
     pointer-events: none;
     cursor: default;
     outline: none;
-    transition: color 0.4s linear;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-.container--open .intro__about {
+.container--open .intro__about{
     pointer-events: auto;
-    color: #000000;
+    opacity: 1;
 }
 
 
@@ -107,14 +106,11 @@
     -webkit-flex: none;
     flex: none;
     overflow: hidden;
-    margin: 0;
+    margin: 0 10px 0 0;
     padding: 0;
-    width: 100px;
-    height: 40px;
     outline: none;
     border: none;
     background: none;
-    font-weight: bold;
 }
 
 /* Hide the text */
@@ -230,10 +226,14 @@
     transform: translate3d(0, 20px, 0);
 }
 
+.intro__control {
+    float: right;
+}
+
 
 /* Media Queries */
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
     .item {
         -webkit-flex: 1 0 33.333%;
         flex: 1 0 33.333%;
@@ -241,7 +241,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 590px) and (max-width: 999px) {
     .item {
         -webkit-flex: 1 0 50%;
         flex: 1 0 50%;
@@ -253,35 +253,23 @@
     }
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 589px) {
     .item {
         -webkit-flex: 1 0 100%;
         flex: 1 0 100%;
         height: 90vw;
     }
-
+    .intro__description{
+        width: auto;
+    }
     .intro__title {
         font-size: 2em;
     }
-}
-
-.hi{
-margin-bottom:50px;
-    width: 60%;
-
-}
-.hi h5{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    font-size: 1.1em;
-    letter-spacing: 0.08em;
-
-}
-.trigger h5{
-font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    font-size: 1.1em;
-    letter-spacing: 0.08em;
-
-
+    .intro__content {
+        font-size: 1em;
+        padding: 2em;
+    }
+    .container--open .intro__content{
+        padding: 2em 2em 0 2em;
+    }
 }
