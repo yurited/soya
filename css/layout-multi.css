@@ -288,7 +288,7 @@ a	-webkit-transform: translate3d(0, -200px, 0);
 	margin: 0 0 20px;
 	font-weight: 900;
 	font-size: 4em;
-	font-family: "Playfair Display", Georgia, serif;
+    font-family: 'Muli', sans-serif;
 	line-height: 1;
 }
 
@@ -398,8 +398,8 @@ a	-webkit-transform: translate3d(0, -200px, 0);
 	min-height: 100%;
 	width: 100%;
 	opacity: 0.7;
-	-webkit-transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1);
-	transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1);
+	-webkit-transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
+	transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
 	transition: transform 0.5s, opacity 0.5s;
 }
@@ -415,9 +415,10 @@ a	-webkit-transform: translate3d(0, -200px, 0);
 	bottom: 0;
 	margin: 0;
 	padding: 1em;
-	color: #dbdbdb;
-	font-size: 1.85em;
-	font-family: "Playfair Display", Georgia, serif;
+	color: #fff;
+	font-size: 1em;
+	font-family: 'Muli', sans-serif;
+}
 	line-height: 1;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
