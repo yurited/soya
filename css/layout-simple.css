@@ -1,3 +1,11 @@
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
 
 .intro {
     position: fixed;
@@ -8,17 +16,21 @@
     background: #fff;
     -webkit-transition: -webkit-transform 0.6s;
     transition: transform 0.6s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-.container--open .intro {
-    -webkit-transform: translate3d(0, -100%, 0) translate3d(0, 140px, 0);
-  
+    /*-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);*/
 }
 
 /* Fullscreen image */
-.intro__image {
+
+
+.container--open .intro {
+    transform: translate3d(0, -100%, 0) translate3d(0, 140px, 0);
+    -webkit-transform: translate3d(0, -100%, 0) translate3d(0, 140px, 0);
+}
+
+
+
+/*.intro__image {
     position: absolute;
     bottom: 0;
     min-width: 100%;
@@ -32,41 +44,38 @@
     transition: transform 0.6s, opacity 0.6s;
     -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-.container--open .intro__image {
+}*/
+/*.container--open .intro__image {
     opacity: 0;
     -webkit-transform: translate3d(0, 10%, 0);
     transform: translate3d(0, 10%, 0);
-}
+}*/
 
 /* Intro content */
 .intro__content {
     position: absolute;
-    bottom: 10%;
-    padding: 10%;
+    bottom: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     width: 100%;
     font-size: 1.15em;
     color:rgba(0,0,0,0.75);
 }
+
 .container--open .intro__content {
-    transition: padding-bottom;
-    position: absolute;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
     bottom: 0;
-    padding-bottom: 0;
-    width: 100%;
     color: #555;
 }
+
 .container--open .intro__subtitle{
-color: #ccc;
+    color: #ccc;
 }
 .container--open .menu_selected {
     color: #555;
 }
 
-.intro__content {
-    transition: padding 0.3s ease-out, color 0.3s ease-out;
-}
 .intro__title {
     margin: 0;
     font-weight: 700;
@@ -83,6 +92,7 @@ color: #ccc;
 .intro__subtitle {
     position: relative;
 }
+
 .intro__description {
     margin: 0 0 55px 0;
     width: 50%;
@@ -103,21 +113,34 @@ color: #ccc;
 }
 
 .intro.cbp-af-header-shrink {
-height: 90px;
-box-shadow:0 0 1px rgba(0,0,0,0.15);
-
-
+    height: 90px;
+    box-shadow:0 0 1px rgba(0,0,0,0.15);
 }
 
 .container--open .intro.cbp-af-header-shrink .intro__title {
-    float: left;
+    position:absolute;
+    bottom: 29px;
     font-size: 2em;
-    line-height: 90px;
 }
+
+.container--open .intro.cbp-af-header-shrink .intro__subtitle {
+    position:absolute;
+    width: 80%;
+    bottom: 29px;
+}
+
+.intro__content {
+    height: 90px;
+}
+
+.intro_header {
+    position: relative;
+    height: 100%;
+}
+
 
 .container--open .intro.cbp-af-header-shrink .intro__control {
     margin: 0;
-    line-height: 90px;
 }
 
 .intro.cbp-af-header-shrink .intro__caption {
@@ -228,8 +251,8 @@ box-shadow:0 0 1px rgba(0,0,0,0.15);
 }
 .item {
     position: relative;
-/*    -webkit-flex: 1 0 25%;
-    flex: 1 0 25%;*/
+    -webkit-flex: 1 0 25%;
+    flex: 1 0 25%;
     -webkit-flex: 1 0 33.333%;
     flex: 1 0 33.333%;
     overflow: hidden;
@@ -248,20 +271,17 @@ box-shadow:0 0 1px rgba(0,0,0,0.15);
     opacity: 1;
     -webkit-transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
     transform: translate3d(0, -50%, 0) scale3d(1, 1, 1);
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 1s, opacity 0.5s, ease-out;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .item:hover .item__image {
     opacity: 0.1;
-    -webkit-transform: translate3d(0, -50%, 0);
-    transform: translate3d(0, -50%, 0);
 }
-item__title:hover{
- opacity: 0.5;
-    -webkit-transition: 0.3s;
-  
 
+.item__title:hover{
+    opacity: 0.5;
+    -webkit-transition: 0.3s;
 }
 
 .item__title {
@@ -561,12 +581,12 @@ item__title:hover{
 }
 h5.imgtittle{
   margin: 1.5em auto 1em auto;
-  font-size: 1.2em;  
+  font-size: 1.2em;
   color: rgba(0,0,0,0.75);
 }
 h6.imgtittle{
   margin: 2em auto 1em auto;
-  font-size: 1.2em;  
+  font-size: 1.2em;
   color: rgba(0,0,0,0.75);
   text-align: center;
 }
